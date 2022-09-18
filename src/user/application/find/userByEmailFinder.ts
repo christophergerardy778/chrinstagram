@@ -5,6 +5,7 @@ import { Filter } from '../../../shared/domain/criteria/filter';
 import { FilterOperator } from '../../../shared/domain/criteria/filterOperator';
 import { UserEmail } from '../../domain/valueObject/UserEmail';
 import { Filters } from '../../../shared/domain/criteria/filters';
+import { EmailNotFound } from '../../domain/exception/emailNotFound';
 
 export class UserByEmailFinder {
   constructor(private readonly allUsers: AllUsers) {
@@ -15,7 +16,7 @@ export class UserByEmailFinder {
     const user = await this.allUsers.searchByCriteria(criteria);
 
     if (user === null) {
-      throw new Error();
+      throw new EmailNotFound();
     }
 
     return user;

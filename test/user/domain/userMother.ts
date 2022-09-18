@@ -15,6 +15,22 @@ export class UserMother {
     );
   }
 
+  public static toLogin(password: string) {
+    return User.create(
+      UserIdMother.create(),
+      UserEmailMother.random(),
+      UserPasswordMother.create(password),
+    );
+  }
+
+  public static copy(user: User) {
+    return User.create(
+      user.id,
+      user.email,
+      user.password,
+    );
+  }
+
   public static create(
     id: UserId,
     email: UserEmail,
