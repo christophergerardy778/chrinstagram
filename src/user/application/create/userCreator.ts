@@ -1,8 +1,8 @@
 import { injectable } from 'inversify';
 import { AllUsers } from '../../domain/allUsers';
 import { User } from '../../domain/user';
-import { UserEmail } from '../../domain/valueObject/UserEmail';
-import { EmailAlreadyTaken } from '../../domain/exception/EmailAlreadyTaken';
+import { UserEmail } from '../../domain/valueObject/userEmail';
+import { EmailAlreadyTaken } from '../../domain/exception/emailAlreadyTaken';
 import { UserByEmailSearcher } from '../search/userByEmailSearcher';
 
 @injectable()

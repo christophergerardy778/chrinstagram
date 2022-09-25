@@ -1,8 +1,8 @@
 import { UserByEmailFinder } from '../../application/find/userByEmailFinder';
-import { UserEmail } from '../valueObject/UserEmail';
+import { UserEmail } from '../valueObject/userEmail';
 import { UserPassword } from '../valueObject/userPassword';
 import { PasswordHashing } from '../../../shared/domain/passwordHashing';
-import { BadUserCredentials } from '../exception/BadUserCredentials';
+import { BadUserCredentials } from '../exception/badUserCredentials';
 import { Jwt } from '../../../shared/domain/jwt';
 import { UserId } from '../valueObject/userId';
 
@@ -16,7 +16,7 @@ export class UserLogin {
 
   public async run(email: UserEmail, password: UserPassword) {
     const user = await this.userByEmailFinder.run(email);
-    await this.isPasswordCorrect(password, user.password);
+    await this.isPasswordCorrect(password, user.password!);
     return this.generateToken(user.id);
   }
 

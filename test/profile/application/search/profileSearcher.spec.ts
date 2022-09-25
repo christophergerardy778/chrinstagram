@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { mock } from 'jest-mock-extended';
 import { ProfileSearcher } from '../../../../src/profile/application/search/profileSearcher';
-import { AllProfiles } from '../../../../src/profile/domain/allProfiles';
+import { AllProfiles } from '../../../../src/profile/domain/repository/allProfiles';
 import { ProfileMother } from '../../domain/profileMother';
 import { ProfileUsernameMother } from '../../domain/profileUsernameMother';
 
@@ -20,7 +20,7 @@ describe('Profile Searcher', () => {
     await expect(profileSearcher.run(givenProfile.username)).resolves.toEqual(givenProfile);
   });
 
-  it('Debera regresar null si no existe un usuario con el username: christophergerardy778', async () => {
+  it('Debera regresar null si no existe un usuario', async () => {
     allProfiles.searchByCriteria.mockReturnValue(Promise.resolve(null));
     await expect(profileSearcher.run(givenUserName)).resolves.toBe(null);
   });

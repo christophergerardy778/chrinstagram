@@ -1,4 +1,4 @@
-import { Conflict } from '../../../shared/domain/exception/Conflict';
+import { Conflict } from '../../../shared/domain/exception/conflict';
 
 export class UsernameAlreadyTaken extends Conflict {
   constructor() {

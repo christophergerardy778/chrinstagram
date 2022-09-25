@@ -1,5 +1,5 @@
-import { Profile } from './profile';
-import { Criteria } from '../../shared/domain/criteria/criteria';
+import { Profile } from '../profile';
+import { Criteria } from '../../../shared/domain/criteria/criteria';
 
 export interface AllProfiles {
   save(profile: Profile): Promise<void>;

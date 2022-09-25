@@ -1,9 +1,9 @@
 import { mock } from 'jest-mock-extended';
 import { ProfileMother } from '../../domain/profileMother';
-import { AllProfiles } from '../../../../src/profile/domain/allProfiles';
+import { AllProfiles } from '../../../../src/profile/domain/repository/allProfiles';
 import { ProfileCreator } from '../../../../src/profile/application/create/profileCreator';
 import { ProfileSearcher } from '../../../../src/profile/application/search/profileSearcher';
-import { UsernameAlreadyTaken } from '../../../../src/profile/domain/exceptions/UsernameAlreadyTaken';
+import { UsernameAlreadyTaken } from '../../../../src/profile/domain/exception/UsernameAlreadyTaken';
 
 const givenProfile = ProfileMother.random();
 const allProfiles = mock<AllProfiles>();

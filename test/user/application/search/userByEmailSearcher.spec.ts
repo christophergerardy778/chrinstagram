@@ -7,18 +7,18 @@ const givenUser = UserMother.random();
 const allUsers = mock<AllUsers>();
 const userByEmailSearcher = new UserByEmailSearcher(allUsers);
 
-describe('User By Email Searcher', () => {
+describe('Buscar usuario por email', () => {
   beforeEach(() => {
     allUsers.searchByCriteria.mockReset();
   });
 
-  it('Encontrar un usuario por email', async () => {
+  it('Retornar un usuario si si lo encuentra', async () => {
     allUsers.searchByCriteria.mockReturnValue(Promise.resolve(givenUser));
     const user = await userByEmailSearcher.run(givenUser.email);
     expect(user).not.toBeNull();
   });
 
-  it('Regresar null si no se encontró un usuario', async () => {
+  it('Regresar null si no encontró un usuario', async () => {
     allUsers.searchByCriteria.mockReturnValue(Promise.resolve(null));
     const user = await userByEmailSearcher.run(givenUser.email);
     expect(user).toBeNull();

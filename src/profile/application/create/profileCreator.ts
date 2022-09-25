@@ -1,11 +1,9 @@
-import { injectable } from 'inversify';
-import { AllProfiles } from '../../domain/allProfiles';
+import { AllProfiles } from '../../domain/repository/allProfiles';
 import { Profile } from '../../domain/profile';
 import { ProfileUsername } from '../../domain/valueObject/profileUsername';
-import { UsernameAlreadyTaken } from '../../domain/exceptions/UsernameAlreadyTaken';
+import { UsernameAlreadyTaken } from '../../domain/exception/UsernameAlreadyTaken';
 import { ProfileSearcher } from '../search/profileSearcher';
 
-@injectable()
 export class ProfileCreator {
   constructor(
     private readonly allProfiles: AllProfiles,

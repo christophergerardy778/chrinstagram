@@ -1,6 +1,10 @@
+import { config } from 'dotenv';
+
+config();
+
 export default {
-    verbose: true,
-    transform: {
-        '^.+\\.tsx?$': 'ts-jest',
-    },
+  verbose: true,
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
 };

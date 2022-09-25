@@ -4,7 +4,7 @@ import { UserCreator } from '../../../../src/user/application/create/userCreator
 import { AllUsers } from '../../../../src/user/domain/allUsers';
 import { UserByEmailSearcher } from '../../../../src/user/application/search/userByEmailSearcher';
 import { UserMother } from '../../domain/userMother';
-import { EmailAlreadyTaken } from '../../../../src/user/domain/exception/EmailAlreadyTaken';
+import { EmailAlreadyTaken } from '../../../../src/user/domain/exception/emailAlreadyTaken';
 
 const givenUser = UserMother.random();
 const allUsers = mock<AllUsers>();

@@ -1,5 +1,7 @@
 export interface UserPrimitive {
   id: string;
   email: string;
-  password: string;
+  gender: number;
+  birthday?: string;
+  password?: string;
 }

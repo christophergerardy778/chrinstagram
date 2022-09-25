@@ -1,17 +1,16 @@
-import { injectable } from 'inversify';
 import { UserCreator } from '../../application/create/userCreator';
 import { PasswordHashing } from '../../../shared/domain/passwordHashing';
 import { UserPassword } from '../valueObject/userPassword';
 import { ProfileUsername } from '../../../profile/domain/valueObject/profileUsername';
-import { UserEmail } from '../valueObject/UserEmail';
+import { UserEmail } from '../valueObject/userEmail';
 import { ProfileName } from '../../../profile/domain/valueObject/profileName';
 import { User } from '../user';
 import { UserId } from '../valueObject/userId';
 import { ProfileCreator } from '../../../profile/application/create/profileCreator';
 import { Profile } from '../../../profile/domain/profile';
 import { ProfileId } from '../../../profile/domain/valueObject/profileId';
+import { UserGender } from '../valueObject/userGender';
 
-@injectable()
 export class UserSignUp {
   constructor(
     private readonly userCreator: UserCreator,
@@ -25,12 +24,13 @@ export class UserSignUp {
     profileId: ProfileId,
     name: ProfileName,
     username: ProfileUsername,
+    gender: UserGender,
     email: UserEmail,
     password: UserPassword,
   ): Promise<void> {
     const hashedPassword = await this.hashPassword(password);
 
-    const user = User.create(userId, email, hashedPassword);
+    const user = User.create(userId, email, gender, hashedPassword);
     const profile = Profile.withBasicData(profileId, name, username, user);
 
     await this.userCreator.run(user);

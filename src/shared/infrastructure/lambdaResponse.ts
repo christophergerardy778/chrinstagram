@@ -1,4 +1,4 @@
-import { HttpStatusCode } from './httpStatusCode';
+import { HttpStatusCode } from '../domain/httpStatusCode';
 
 export interface LambdaResponse {
   statusCode: HttpStatusCode,

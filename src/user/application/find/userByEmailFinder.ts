@@ -3,7 +3,7 @@ import { User } from '../../domain/user';
 import { Criteria } from '../../../shared/domain/criteria/criteria';
 import { Filter } from '../../../shared/domain/criteria/filter';
 import { FilterOperator } from '../../../shared/domain/criteria/filterOperator';
-import { UserEmail } from '../../domain/valueObject/UserEmail';
+import { UserEmail } from '../../domain/valueObject/userEmail';
 import { Filters } from '../../../shared/domain/criteria/filters';
 import { EmailNotFound } from '../../domain/exception/emailNotFound';
 

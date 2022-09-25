@@ -1,3 +1,4 @@
+/*
 import { Container } from 'inversify';
 import { httpContainer } from './example/infrastructure/di/httpContainer';
 import { sharedContainer } from './shared/infrastructure/di/sharedContainer';
@@ -16,3 +17,4 @@ container.load(...[
 export {
   container,
 };
+*/

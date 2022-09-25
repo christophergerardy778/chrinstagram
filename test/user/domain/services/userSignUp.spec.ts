@@ -3,9 +3,9 @@ import { mock } from 'jest-mock-extended';
 import { UserMother } from '../userMother';
 import { UserSignUp } from '../../../../src/user/domain/services/userSignUp';
 import { UserCreator } from '../../../../src/user/application/create/userCreator';
-import { PasswordHash } from '../../../../src/shared/infrastructure/PasswordHash';
+import { PasswordHash } from '../../../../src/shared/infrastructure/passwordHash';
 import { ProfileMother } from '../../../profile/domain/profileMother';
-import { AllProfiles } from '../../../../src/profile/domain/allProfiles';
+import { AllProfiles } from '../../../../src/profile/domain/repository/allProfiles';
 import { AllUsers } from '../../../../src/user/domain/allUsers';
 import { UserByEmailSearcher } from '../../../../src/user/application/search/userByEmailSearcher';
 import { ProfileCreator } from '../../../../src/profile/application/create/profileCreator';
@@ -31,8 +31,9 @@ const registerUserResult = () => registerUser.run(
   givenProfile.id,
   givenProfile.name,
   givenProfile.username,
+  givenUser.gender,
   givenUser.email,
-  givenUser.password,
+  givenUser.password!,
 );
 
 describe('Registro de usuarios', () => {

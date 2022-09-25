@@ -1,5 +1,5 @@
-import { Exception } from './exception';
-import { HttpStatusCode } from './httpStatusCode';
+import { Exception } from '../exception';
+import { HttpStatusCode } from '../httpStatusCode';
 
 export class InvalidParam extends Exception {
   constructor(protected value: any, protected field: string) {

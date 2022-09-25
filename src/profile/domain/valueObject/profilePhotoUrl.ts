@@ -1,5 +1,5 @@
 import { StringValueObject } from '../../../shared/domain/valueObject/stringValueObject';
-import { InvalidParam } from '../../../shared/domain/invalidParam';
+import { InvalidParam } from '../../../shared/domain/exception/invalidParam';
 
 export class ProfilePhotoUrl extends StringValueObject {
   constructor(value: string) {

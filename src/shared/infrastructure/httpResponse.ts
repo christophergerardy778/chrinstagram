@@ -1,4 +1,4 @@
-import { LambdaResponse } from '../domain/lambdaResponse';
+import { LambdaResponse } from './lambdaResponse';
 import { HttpStatusCode } from '../domain/httpStatusCode';
 import { Exception } from '../domain/exception';
 

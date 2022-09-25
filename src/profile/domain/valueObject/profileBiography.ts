@@ -1,5 +1,5 @@
 import { StringValueObject } from '../../../shared/domain/valueObject/stringValueObject';
-import { BiographyLengthTooLong } from '../exceptions/biographyLengthTooLong';
+import { BiographyLengthTooLong } from '../exception/biographyLengthTooLong';
 
 export class ProfileBiography extends StringValueObject {
   public static readonly MAX_BIOGRAPHY_LENGTH = 100;

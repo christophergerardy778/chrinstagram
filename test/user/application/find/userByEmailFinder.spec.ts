@@ -11,7 +11,7 @@ const givenUserAlreadyRegister = UserMother.random();
 const allUsers = mock<AllUsers>();
 const userByEmailFinder = new UserByEmailFinder(allUsers);
 
-describe('Usuario intenta iniciar sesión con un email que no existe', () => {
+describe('Encontrar usuario por email', () => {
   beforeEach(() => {
     allUsers.searchByCriteria.mockReset();
   });
